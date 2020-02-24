@@ -33,4 +33,13 @@ class Display_Pages(models.Model):
         codelist_name = root[0][0][0].text
         description = root[0][1][0].text
 
-        return [codelist_name,  description]
+        items_table = []
+
+        for row in root[1]:
+            
+            code_number = row[0].text
+            name = row[1][0].text
+            items_table.append([code_number, name])
+            
+
+        return [codelist_name,  description, items_table]

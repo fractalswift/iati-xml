@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+This is the G page. The content is below:
+
+
+<ul>
+
+<li>
+
+{{name}}
+
+</li>
+
+<li>
+{{description}}
+</li>
+
+</ul>
+
+This UL below can be made into a table later 
+<ul>
+{% for row in items_table %}
+<li>{{row}}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

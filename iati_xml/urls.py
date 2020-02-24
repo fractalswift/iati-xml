@@ -20,5 +20,10 @@ import codelists.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', codelists.views.home, name='home'),
-    path('test/', codelists.views.test, name='test')
+    path('test/', codelists.views.test, name='test'),
+    path('gazateeragency/', codelists.views.gazetteerAgency, name='gazateeragency'),
+    path('documentcategory/', codelists.views.documentCategory, name='documentcategory')
+
+
+
 ]

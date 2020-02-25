@@ -15,7 +15,7 @@ xml_list = []
 
 for row in folder_contents:
 
-    tree = ET.parse(f'codelists/xml/{row}')
+    tree = ET.parse('codelists/xml/' + str(row))
     root = tree.getroot()
     xml_list.append(root)
 

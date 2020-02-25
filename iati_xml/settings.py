@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'iati',
         'USER': 'postgres',
-        'PASSWORD': 'koolthing',
+        'PASSWORD': 'funtimedeployment',
         'HOST': 'localhost',
         'PORT':'5432',
     }

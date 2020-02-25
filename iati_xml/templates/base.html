@@ -1,25 +1,22 @@
-<h2>This is the base page but I'm importing the data from {{name}}</h2>
+<h2>Codelist name: {{name}}</h2>
 
 
 
-<ul>
 
-<li>
+<h3>Description: </h3>
+<p>{{description}}</p>
 
-{{name}}
 
-</li>
+<table>
+<tr>
+    <th>Code Number</th>
+    <th>Name</th>
+{% for k, v in items_table.items %}
 
-<li>
-{{description}}
-</li>
-
-</ul>
-
-<ul>
-{% for row in items_table %}
-<li>{{row}}</li>
+<tr>
+    <td>{{k}}</th>
+    <td>{{v}}</th>
 
 {% endfor %}
 
-</ul>
+</table>

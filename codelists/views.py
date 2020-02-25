@@ -53,7 +53,7 @@ def gazetteerAgency(request):
 
     data = Display_Pages.display_page(xml_list[0])
 
-    return render(request, f'codelists/gazateeragency.html', {
+    return render(request, f'codelists/gazetteeragency.html', {
         'name': data[0],
         'description': data[1],
         'items_table': data[2]

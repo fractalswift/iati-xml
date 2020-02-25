@@ -2,13 +2,24 @@
 
 
 
+<ul>
 
-<h2>This is the block content</h2>
+<li>
 
+{{name}}
 
+</li>
 
-  {% block content %}
-    {% endblock %}
+<li>
+{{description}}
+</li>
 
-<h2>This is the end of the block content</h2>
+</ul>
 
+<ul>
+{% for row in items_table %}
+<li>{{row}}</li>
+
+{% endfor %}
+
+</ul>

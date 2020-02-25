@@ -28,9 +28,13 @@ for row in folder_contents:
 
 def home(request):
 
-    pages_list = Display_Pages.show_links()
+    #titles = Display_Pages.show_links()[0]
+    #links = Display_Pages.show_links()[1]
+    # {'titles': titles, "links": links}
 
-    return render(request, 'codelists/home.html', {'pages_list': pages_list})
+    codelists_data = Display_Pages.show_links()
+
+    return render(request, 'codelists/home.html', {"codelists_data": codelists_data} )
 
 
 
@@ -65,6 +69,88 @@ def documentCategory(request):
         'items_table': data[2]
         })
 
+def activityDateType(request):
 
+    data = Display_Pages.display_page(xml_list[2])
+
+    return render(request, f'codelists/activitydatetype.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+def budgetStatus(request):
+
+    data = Display_Pages.display_page(xml_list[3])
+
+    return render(request, f'codelists/budgetstatus.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+
+def relatedActivityType(request):
+
+    data = Display_Pages.display_page(xml_list[5])
+
+    return render(request, f'codelists/relatedactivitytype.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+
+def budgetType(request):
+
+    data = Display_Pages.display_page(xml_list[6])
+
+    return render(request, f'codelists/budgettype.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+
+def transactionType(request):
+
+    data = Display_Pages.display_page(xml_list[7])
+
+    return render(request, f'codelists/transactiontype.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+
+def organisationRole(request):
+
+    data = Display_Pages.display_page(xml_list[8])
+
+    return render(request, f'codelists/organisationrole.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+    
+def activityStatus(request):
+
+    data = Display_Pages.display_page(xml_list[4])
+
+    return render(request, f'codelists/activitystatus.html', {
+        'name': data[0],
+        'description': data[1],
+        'items_table': data[2]
+        })
+
+
+
+# Possible extension for future
+#def renderCodelist(request, codelist_name):
+
+    #codelist = get_object_or_404(Display_Pages.display_page(xml_list[8]), YOUR_ITEM_FIELD_NAME=item_name)
+
+    #pass
 
 

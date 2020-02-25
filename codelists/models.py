@@ -1,6 +1,7 @@
 from django.db import models
 
 import os
+import re
 
 
 import xml.etree.ElementTree as ET
@@ -17,8 +18,23 @@ class Display_Pages(models.Model):
     def show_links():
 
         folder_contents = os.listdir("codelists/xml/")
+        titles = []
+        links =[]
 
-        return folder_contents
+        codelists_data = {}
+
+        for row in folder_contents:
+            # add in a space before capital letter and strip off the file extension
+            title = re.sub( r"([A-Z])", r" \1", row[0:-4]) 
+            titles.append(title)
+            # convert to lowercase and change .xml for /
+            link = re.sub( r".xml", r"/", row).lower()
+            links.append(link)
+
+            codelists_data[title] = link
+
+
+        return codelists_data
 
 
  

@@ -22,7 +22,14 @@ urlpatterns = [
     path('', codelists.views.home, name='home'),
     path('test/', codelists.views.test, name='test'),
     path('gazateeragency/', codelists.views.gazetteerAgency, name='gazateeragency'),
-    path('documentcategory/', codelists.views.documentCategory, name='documentcategory')
+    path('documentcategory/', codelists.views.documentCategory, name='documentcategory'),
+    path('activitydatetype/', codelists.views.activityDateType, name='activitydatetype'),
+    path('budgetstatus/', codelists.views.budgetStatus, name='budgetstatus'),
+    path('budgettype/', codelists.views.budgetType, name='budgettype'),
+    path('organisationrole/', codelists.views.organisationRole, name='organisationrole'),
+    path('relatedactivitytype/', codelists.views.relatedActivityType, name='relatedactivitytype'),
+    path('transactiontype/', codelists.views.transactionType, name='transactiontype'),
+    path('activitystatus/', codelists.views.activityStatus, name='activitystatus'),
 
 
 

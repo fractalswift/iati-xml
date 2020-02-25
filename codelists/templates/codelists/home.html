@@ -3,12 +3,18 @@ This is the home page
 <h1>Page Links:</h1>
 
 <ul>
-{% for page in pages_list %}
+{% for k, v in codelists_data.items %}
 
 <li>
-{{page}}
+<a href={{v}}>{{k}}</a>
 </li>
+
+
 
 {% endfor %}
 
 </ul>
+
+
+
+

@@ -7,6 +7,8 @@ import os
 import xml.etree.ElementTree as ET
 
 
+# Import filenames from xml codelists folder for
+# to pass to models for generating page content
 
 
 folder_contents = os.listdir("codelists/xml/")
@@ -23,14 +25,8 @@ for row in folder_contents:
 
 
 
-# Create your views here.
-
-
 def home(request):
 
-    #titles = Display_Pages.show_links()[0]
-    #links = Display_Pages.show_links()[1]
-    # {'titles': titles, "links": links}
 
     codelists_data = Display_Pages.show_links()
 
@@ -38,25 +34,17 @@ def home(request):
 
 
 
-def test(request):
-
-    data = Display_Pages.display_test_page()
-
-    return render(request, 'codelists/test.html', {
-        'name': data[0],
-        'description': data[1],
-        'items_table': data[2]
-        })
-
 
 def gazetteerAgency(request):
+
+    # Hand to models to parse xml content
 
     data = Display_Pages.display_page(xml_list[0])
 
     return render(request, 'codelists/gazetteeragency.html', {
         'name': data[0],
         'description': data[1],
-        'items_table': data[2]
+        'items_table': data[2],
         })
 
 def documentCategory(request):
@@ -66,7 +54,7 @@ def documentCategory(request):
     return render(request, 'codelists/documentcategory.html', {
         'name': data[0],
         'description': data[1],
-        'items_table': data[2]
+        'items_table': data[2],
         })
 
 def activityDateType(request):
